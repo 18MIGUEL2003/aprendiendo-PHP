@@ -1,8 +1,15 @@
 <?php
-# 
-function contarVocales($palabra = "miguel") {
-    $charCounts = count_chars($palabra, 1);
-    echo "La cantidad de vocales de la palabra ingresada son: " . $charCounts;
+function countVowels($string){
+    $vowels = ['a', 'e', 'i', 'o', 'u'];
+    $count = 0;
+
+    foreach ($vowels as $vowel) {
+        $count += substr_count($string,$vowel);
+    }
+    return $count;
 }
-contarVocales()
+
+$text = "Miguel.";
+$vowelCount = countVowels($text);
+echo "El número de vocales es: " . $vowelCount;
 ?>
